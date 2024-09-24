@@ -10,6 +10,6 @@ router.get('/signup',(req,res)=>{
     res.render('signup')
 })
 router.post('/signup/adddata',(req,res)=>{
-    signupcontroller.addUser(req,res);
+    signupcontroller.addUser(req,res)
 })
 module.exports= router;

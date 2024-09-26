@@ -6,7 +6,7 @@ const signupcontroller = require('../controller/signupcontroller')
 router.get('/',(req,res)=>{
     res.render('home');
 })
-router.get('/signup',(req,res)=>{
+router.get('/views/signup',(req,res)=>{
     res.render('signup')
 })
 router.post('/signup/adddata',(req,res)=>{

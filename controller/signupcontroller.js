@@ -1,18 +1,22 @@
+const bcrypt = require('bcrypt');
 const Student = require('../models/data');
+const saltRound=10;
 async function addUser(req, res) {
     try {
-        console.log(req.body);
+        // console.log(req.body, 'req.body')
         let student = new Student(req.body);
-        student.studentType=2;
-        console.log(student);
+        let password = bcrypt.hashSync(req.body.pass,saltRound);
+        // console.log(password);
+        // student.studentType=2;
+        student.pass= password;
+        // console.log(student);
         await student.save();
-        res.render('home',{
-            student:student
-        })
+        res.redirect('/');
     } catch (error) {
-        console.log('ERROR');
+        console.log(error.message);
     }
 }
+
 module.exports={
     addUser 
 }

@@ -7,7 +7,7 @@ router.get('/',(req,res)=>{
     res.render('home');
 })
 router.get('/views/signup',(req,res)=>{
-    res.render('signup')
+    res.render('signup');
 })
 router.post('/signup/adddata',(req,res)=>{
     signupcontroller.addUser(req,res)
